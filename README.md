@@ -19,17 +19,17 @@ aa00bb44|11111111222222223333333344444444|api.example.com:9999
 * These can be found in the Portal under Settings, Site Administration, 
   API Keys.
 
-Installation:
-- Copy where-are-they-now.rb and wlslib.rb to the same directory in your path. 
-wlslib.rb will also be found if you copy it to any directory in your
+##Installation:
+* Copy where-are-they-now.rb and wlslib.rb to the same directory in your path. wlslib.rb will also be found if you copy it to any directory in your
 ruby library search path, which can be seen by running
+```
 echo 'puts $:' | irb
-- Make a directory to hold a local copy of events with:
+```
+* Make a directory to hold a local copy of events with:
+```
 mkdir -m 700 ~/api_cache/
-- [Optional but recommended] Create a file holding IP addresses and/or
-  CIDR blocks that you're confident are legitimate source addresses. 
-  Any logins from one of these will show in a "verified" column for the
-  output, allowing you to focus on the "unverified" addresses.
+```
+* [Optional but recommended] Create a file holding IP addresses and/or CIDR blocks that you're confident are legitimate source addresses.  Any logins from one of these will show in a "verified" column for the output, allowing you to focus on the "unverified" addresses.
 touch /etc/verified-client-ips
 chmod 600 /etc/verified-client-ips
 chown {user} /etc/verified-client-ips
@@ -40,19 +40,19 @@ chown {user} /etc/verified-client-ips
 ##Sample invocations:
 
 *See help text and parameters:
-'''
+```
 where-are-they-now.rb -h
-'''
+```
 
-##Generate a login IP report and save to disk
-'''
+*Generate a login IP report and save to disk
+```
 where-are-they-now.rb -i aabbcc00 >watn-report.html
-'''
+```
 
-##Generate a report but only cover logins since 2013-01-15
-'''
+*Generate a report but only cover logins since 2013-01-15
+```
 where-are-they-now.rb -i aabbcc00 -s 201301015 >watn-report-recent.html
-'''
+```
 
 ###Advanced uses:
 
@@ -60,4 +60,6 @@ If you manage more than one Halo Portal organization, you can generate
 a report that covers logins from all of them by specifying "-i {key}"
 multiple times (with corresponding lines for all keys in
 /etc/halo-api-keys :
+```
 where-are-they-now.rb -i aabbcc00 -i 7890abcd >watn-combined.html
+```
