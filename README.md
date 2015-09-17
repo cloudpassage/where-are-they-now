@@ -63,3 +63,7 @@ multiple times (with corresponding lines for all keys in
 ```
 where-are-they-now.rb -i aabbcc00 -i 7890abcd >watn-combined.html
 ```
+
+<!--
+#CPTAGS:community-supported audit archive
+-->
