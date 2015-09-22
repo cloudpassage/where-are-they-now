@@ -401,11 +401,11 @@ api_client_ids.each do |one_client_id|
         first_event_date = first_event['events'][0]['created_at'].match(/^([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])/)
         #=> "2011-11-30T02:58:35.012790Z" => "2011-11-30"
 
-        date_range = Date.new(first_event_date[1].to_i, first_event_date[2].to_i, first_event_date[3].to_i)..(Date.today + 1)
+        date_range = Date.new(first_event_date[1].to_i, first_event_date[2].to_i, first_event_date[3].to_i)..(Date.today)
         date_range.each do |day|
-          #puts "#{day.year} #{day.month}, #{day.day} #{(day + 1).year} #{(day + 1).month}, #{(day + 1).day}"
+          puts "#{day.year} #{day.month}, #{day.day} #{(day + 1).year} #{(day + 1).month}, #{(day + 1).day}"
 
-          more_api_params = "&since=#{day.year}-#{day.month}-#{day.day}&until=#{(day + 1).year}-#{(day + 1).month}-#{(day + 1).day}"
+          more_api_params = "&since=#{day.year}-#{day.strftime("%m")}-#{day.strftime("%d")}&until=#{(day + 1).year}-#{(day + 1).strftime("%m")}-#{(day + 1).strftime("%d")}"
           $stderr.print " #{day.year}-#{day.month}-#{day.day}"
           STDERR.flush
 
