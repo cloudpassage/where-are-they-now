@@ -252,7 +252,8 @@ require 'resolv'
 require 'public_suffix'
 require 'ip'
 require 'date'
-load 'wlslib.rb'
+require 'wlslib'
+#load 'wlslib.rb' #un-comment if you've not loaded wlslib as a gem
 #======== End of loadable modules
 
 
