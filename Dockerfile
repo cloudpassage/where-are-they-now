@@ -1,6 +1,7 @@
 FROM awilson/wlslib
 MAINTAINER Ash Wilson
 
+RUN apt-get update && apt-get install -y vim
 RUN /root/.rbenv/shims/gem install oauth2 rest-client json public_suffix ip
 RUN mkdir -m 700 /root/api_cache
 RUN mkdir -p /opt/cloudpassage/where-are-they-now
