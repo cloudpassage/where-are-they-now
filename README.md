@@ -65,6 +65,6 @@ where-are-they-now.rb -i aabbcc00 -i 7890abcd >watn-combined.html
 ```
 
 <!--
-#CPTAGS:community-supported audit archive
+#CPTAGS:community-unsupported audit archive
 #TBICON:images/ruby_icon.png
 -->
